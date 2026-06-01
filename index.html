@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recibo Público Digital</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#recibo" aria-label="Ir al recibo">
+        <span class="brand-mark">RP</span>
+        <span>Recibo Público Digital</span>
+      </a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#recibo">Recibo</a>
+        <a href="#problema">Problema</a>
+        <a href="#alertas">Alertas</a>
+        <a href="#implementacion">Implementación</a>
+      </nav>
+      <button class="nav-action" id="openReport">Reportar</button>
+    </header>
+
+    <main>
+      <section class="app-hero" id="recibo">
+        <div class="hero-copy">
+          <p class="eyebrow">Herramienta ciudadana de transparencia</p>
+          <h1>El dinero público también debería tener recibo.</h1>
+          <p class="lead">
+            Cada obra tendría un código QR visible para consultar presupuesto,
+            pagos, avance, empresa contratada, documentos y reportes ciudadanos.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#ficha">Ver ficha digital</a>
+            <a class="secondary-button" href="#funcionamiento">Cómo funciona</a>
+          </div>
+        </div>
+
+        <aside class="receipt-panel" aria-label="Ficha de ejemplo">
+          <div class="receipt-head">
+            <div>
+              <p class="receipt-kicker">Recibo público</p>
+              <h2>Rehabilitación de avenida principal</h2>
+            </div>
+            <div class="qr" aria-label="Código QR de ejemplo">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="money-grid">
+            <div>
+              <span>Presupuesto original</span>
+              <strong>$50M</strong>
+            </div>
+            <div>
+              <span>Presupuesto actual</span>
+              <strong>$63M</strong>
+            </div>
+            <div>
+              <span>Empresa</span>
+              <strong>Constructora Ejemplo</strong>
+            </div>
+            <div>
+              <span>Actualizado</span>
+              <strong>Hace 5 días</strong>
+            </div>
+          </div>
+
+          <div class="progress-block">
+            <div class="progress-row">
+              <span>Avance físico</span>
+              <strong id="physicalValue">72%</strong>
+            </div>
+            <div class="bar"><span id="physicalBar"></span></div>
+          </div>
+          <div class="progress-block">
+            <div class="progress-row">
+              <span>Avance financiero</span>
+              <strong id="financialValue">68%</strong>
+            </div>
+            <div class="bar"><span id="financialBar"></span></div>
+          </div>
+
+          <div class="status-card is-ok" id="statusCard">
+            <strong id="statusTitle">Proyecto en orden</strong>
+            <p id="statusText">Los porcentajes son similares. El gasto coincide con lo construido.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="problem-band" id="problema">
+        <div class="section-heading">
+          <p class="eyebrow">El problema</p>
+          <h2>La información puede existir y aun así no ser transparente.</h2>
+          <p>
+            Portales dispersos, lenguaje técnico y datos sin contexto hacen que la
+            ciudadanía no pueda vigilar cuánto costó una obra, quién ganó el
+            contrato, cuánto se pagó y si va en tiempo.
+          </p>
+        </div>
+        <div class="issue-grid">
+          <article>
+            <span>01</span>
+            <h3>Presupuesto poco claro</h3>
+            <p>El monto aprobado y el gasto real rara vez se entienden de un vistazo.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Contratos difíciles</h3>
+            <p>La empresa contratada y sus antecedentes suelen estar escondidos.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Pagos sin evidencia</h3>
+            <p>Los desembolsos no siempre coinciden con el avance físico de la obra.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Retrasos invisibles</h3>
+            <p>Las fechas de entrega cambian sin explicación pública suficiente.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow" id="funcionamiento">
+        <div class="section-heading compact">
+          <p class="eyebrow">Funcionamiento</p>
+          <h2>Del QR a la vigilancia ciudadana.</h2>
+        </div>
+        <div class="steps">
+          <article><strong>1</strong><span>Registro del proyecto</span></article>
+          <article><strong>2</strong><span>Colocación del QR</span></article>
+          <article><strong>3</strong><span>Escaneo ciudadano</span></article>
+          <article><strong>4</strong><span>Consulta del recibo</span></article>
+          <article><strong>5</strong><span>Reporte con evidencia</span></article>
+        </div>
+      </section>
+
+      <section class="dashboard" id="ficha">
+        <div class="section-heading compact">
+          <p class="eyebrow">Ficha digital</p>
+          <h2>Todo lo importante en una pantalla.</h2>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="project-card">
+            <div class="project-title">
+              <div>
+                <p>Proyecto</p>
+                <h3>Escuela primaria #45</h3>
+              </div>
+              <span class="risk-pill">Riesgo alto</span>
+            </div>
+            <dl class="details">
+              <div><dt>Dependencia</dt><dd>Municipio de la zona</dd></div>
+              <div><dt>Inicio</dt><dd>10 de junio</dd></div>
+              <div><dt>Entrega</dt><dd>30 de agosto</dd></div>
+              <div><dt>Documentos</dt><dd>Contrato, licitación, facturas</dd></div>
+            </dl>
+          </article>
+
+          <article class="control-card" id="alertas">
+            <div class="project-title">
+              <div>
+                <p>Detector de irregularidades</p>
+                <h3>Avance físico vs financiero</h3>
+              </div>
+            </div>
+            <label for="scenarioSelect">Escenario</label>
+            <select id="scenarioSelect">
+              <option value="ok">Proyecto en orden</option>
+              <option value="risk">Posible riesgo de corrupción</option>
+              <option value="delay">Obra detenida</option>
+            </select>
+            <div class="mini-bars">
+              <div>
+                <span>Físico</span>
+                <strong id="miniPhysical">72%</strong>
+              </div>
+              <div>
+                <span>Financiero</span>
+                <strong id="miniFinancial">68%</strong>
+              </div>
+            </div>
+            <p class="alert-copy" id="alertCopy">
+              Los porcentajes son similares. No hay alerta automática.
+            </p>
+          </article>
+
+          <article class="supplier-card">
+            <div class="project-title">
+              <div>
+                <p>Proveedor</p>
+                <h3>Constructora Ejemplo S.A. de C.V.</h3>
+              </div>
+            </div>
+            <div class="supplier-stats">
+              <div><strong>18</strong><span>Contratos previos</span></div>
+              <div><strong>$420M</strong><span>Monto recibido</span></div>
+              <div><strong>5</strong><span>Retrasos</span></div>
+              <div><strong>2</strong><span>Sanciones</span></div>
+            </div>
+          </article>
+
+          <article class="history-card">
+            <div class="project-title">
+              <div>
+                <p>Historial de cambios</p>
+                <h3>Nada queda fuera del recibo</h3>
+              </div>
+            </div>
+            <table>
+              <thead>
+                <tr><th>Evento</th><th>Monto</th><th>Fecha</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Contrato original</td><td>$50M</td><td>10 jun</td></tr>
+                <tr><td>Modificación #1</td><td>+$5M</td><td>15 jul</td></tr>
+                <tr><td>Modificación #2</td><td>+$8M</td><td>05 ago</td></tr>
+                <tr><td>Total actual</td><td>$63M</td><td>-</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </section>
+
+      <section class="report-band">
+        <div>
+          <p class="eyebrow">Participación ciudadana</p>
+          <h2>La ciudadanía no solo observa, también participa.</h2>
+          <p>
+            Un reporte debe incluir foto, ubicación GPS, fecha, descripción breve
+            y evidencia opcional para detectar focos rojos por proyecto.
+          </p>
+        </div>
+        <button class="primary-button" id="openReportBottom">Crear reporte</button>
+      </section>
+
+      <section class="implementation" id="implementacion">
+        <div class="section-heading compact">
+          <p class="eyebrow">Implementación e impacto</p>
+          <h2>Un piloto simple que puede crecer.</h2>
+        </div>
+        <div class="timeline">
+          <article><strong>Etapa 1</strong><span>Piloto en obras visibles.</span></article>
+          <article><strong>Etapa 2</strong><span>Plataforma conectada a contratos.</span></article>
+          <article><strong>Etapa 3</strong><span>QR obligatorio desde el inicio.</span></article>
+          <article><strong>Etapa 4</strong><span>Actualizaciones semanales.</span></article>
+          <article><strong>Etapa 5</strong><span>Reportes con evidencia.</span></article>
+          <article><strong>Etapa 6</strong><span>Expansión a compras y programas.</span></article>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="report-dialog" id="reportDialog">
+      <form method="dialog">
+        <div class="dialog-head">
+          <h2>Reporte ciudadano</h2>
+          <button aria-label="Cerrar">x</button>
+        </div>
+        <label>
+          Tipo de observación
+          <select>
+            <option>Avance no coincide</option>
+            <option>Obra detenida</option>
+            <option>Material de baja calidad</option>
+            <option>QR no funciona</option>
+          </select>
+        </label>
+        <label>
+          Descripción breve
+          <textarea rows="4" placeholder="Describe lo que observaste"></textarea>
+        </label>
+        <div class="evidence-grid">
+          <span>Foto</span>
+          <span>GPS</span>
+          <span>Fecha</span>
+          <span>Video opcional</span>
+        </div>
+        <button class="primary-button" value="close">Enviar reporte</button>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
