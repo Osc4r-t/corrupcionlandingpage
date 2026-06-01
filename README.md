@@ -1,6 +1,6 @@
 # Recibo Público Digital
 
-Mini webapp estática para presentar la propuesta ciudadana "Recibo Público Digital".
+Mini Proyecto Ciudadano. Webapp estática para presentar la propuesta ciudadana "Recibo Público Digital".
 
 ## Archivos
 
